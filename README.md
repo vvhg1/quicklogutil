@@ -4,7 +4,8 @@ This is an extension for Visual Studio Code that provides a quick and convenient
 #
 
 ## Features
-- Insert log statements at the current cursor position
+- Insert log statements for the word under the cursor
+- Insert log statements for highlighted text
 - Delete all log statements in the current document
 - Customizable log statements for each supported language
 

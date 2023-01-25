@@ -2,7 +2,7 @@
   "name": "quick-log-util",
   "displayName": "Quick Log Util",
   "description": "Insert and remove log statements",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "vvhg1",
   "icon": "icon.png",
   "license": "MIT",
