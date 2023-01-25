@@ -16,11 +16,19 @@ This is an extension for Visual Studio Code that provides a quick and convenient
 - **To insert a log statement for the "word" under the cursor:**
     - Press `Ctrl/Cmd+Shift+L` 
     - Or press `Ctrl/Cmd+Shift+P` and run `Insert Log Statement`
+
+    <br /> 
+
     ![screenshot](https://raw.githubusercontent.com/vvhg1/quicklogutil/main/images/undercursor.gif)
+
 - **To insert a log statement for longer text, highlight the text and:**
     - Press `Ctrl/Cmd+Shift+L`
     - Or press `Ctrl/Cmd+Shift+P` and run `Insert Log Statement`
+
+    <br /> 
+
     ![screenshot](https://raw.githubusercontent.com/vvhg1/quicklogutil/main/images/highlighted.gif)
+
 - **The log statement for a specific language can be customized via Settings:**
     - `{var}` represents the variable name that will be logged
     - Either open the UI settings for the extension and modify the Log String for the language you want to customize.
