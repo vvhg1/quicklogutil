@@ -1,0 +1,87 @@
+{
+  "name": "quick-log-util",
+  "displayName": "Quick Log Util",
+  "description": "Insert and remove log statements",
+  "version": "1.0.0",
+  "publisher": "vvhg1",
+  "icon": "icon.png",
+  "license": "MIT",
+  "repository": "https://github.com/vvhg1/quicklogutil.git",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.insertLogStatement",
+    "onCommand:extension.deleteAllLogStatements"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Quick Log Util",
+      "properties": {
+        "quickLogUtil.javascriptLogString": {
+          "type": "string",
+          "default": "console.log(\"{var}: \", {var});",
+          "description": "The string to use when inserting a JavaScript/TS log statement, empty uses default"
+        },
+        "quickLogUtil.pythonLogString": {
+          "type": "string",
+          "default": "print(f\"{var}: {{var}}\")",
+          "description": "The string to use when inserting a Python log statement, empty uses default"
+        },
+        "quickLogUtil.csharpLogString": {
+          "type": "string",
+          "default": "Console.WriteLine($\"{var}: {{var}}\");",
+          "description": "The string to use when inserting a C# log statement, empty uses default"
+        },
+        "quickLogUtil.shellscriptLogString": {
+          "type": "string",
+          "default": "echo \"{var}: ${var}\"",
+          "description": "The string to use when inserting a Shell Script log statement, empty uses default"
+        },
+        "quickLogUtil.unityLogString": {
+          "type": "string",
+          "default": "Debug.Log($\"{var}: {{var}}\");",
+          "description": "The string to use when inserting a Unity log statement, empty uses default"
+        },
+        "quickLogUtil.cppLogString": {
+          "type": "string",
+          "default": "std::cout << \"{var}: \" << {var} << std::endl;",
+          "description": "The string to use when inserting a C++ log statement, empty uses default"
+        },
+        "quickLogUtil.cLogString": {
+          "type": "string",
+          "default": "printf(\"{var}: %d\\n\", {var});",
+          "description": "The string to use when inserting a C log statement, empty uses default"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.insertLogStatement",
+        "title": "Insert Log Statement"
+      },
+      {
+        "command": "extension.deleteAllLogStatements",
+        "title": "Delete all Log statements"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.insertLogStatement",
+        "key": "shift+ctrl+l",
+        "mac": "shift+cmd+l",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.deleteAllLogStatements",
+        "key": "shift+ctrl+d",
+        "mac": "shift+cmd+d"
+      }
+    ]
+  }
+}
