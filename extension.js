@@ -125,6 +125,8 @@ function deleteFoundLogStatements(workspaceEdit, docUri, logs) {
 }
 
 function activate(context) {
+  let logger = vscode.window.createOutputChannel("Quick Log Util");
+  logger.appendLine("quick-log-util is now active");
   console.log("quick-log-util is now active");
 
   const insertLogStatement = vscode.commands.registerCommand(
