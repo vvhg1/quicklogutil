@@ -57,6 +57,11 @@
           "type": "string",
           "default": "printf(\"{var}: %d\\n\", {var});",
           "description": "The string to use when inserting a C log statement, empty uses default"
+        },
+        "quickLogUtil.rustLogString": {
+          "type": "string",
+          "default": "println!(\"{var}: {:?}\", {var});",
+          "description": "The string to use when inserting a Rust log statement, empty uses default"
         }
       }
     },

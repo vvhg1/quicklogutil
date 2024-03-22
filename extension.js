@@ -45,6 +45,9 @@ function getAllLogStatements(language, document, documentText) {
       break;
     case "c":
       logToInsert = vscode.workspace.getConfiguration().get("quickLogUtil.cLogString");
+      break;
+    case "rust":
+      logToInsert = vscode.workspace.getConfiguration().get("quickLogUtil.rustLogString"); 
     default:
       return logStatements;
   }
@@ -82,12 +85,13 @@ function getAllLogStatements(language, document, documentText) {
         break;
       case "c":
         logRegex = /printf\((.*)\);?/g;
-
+        break;
+      case "rust":
+        logRegex = /println!\(\"(.*) {:\?}\", .*\);?/g;
       default:
         return logStatements;
     }
   } else {
-
     logRegex = logToInsert.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'); //escape special characters
     logRegex = logRegex.replace(/\\{var\\}/g, "(.*)");
     logRegex = new RegExp(logRegex, 'g');
@@ -202,7 +206,13 @@ function activate(context) {
             logToInsert = vscode.workspace.getConfiguration().get("quickLogUtil.cLogString");
           }
           break;
-
+        case "rust":
+          if (vscode.workspace.getConfiguration().get("quickLogUtil.rustLogString") === "") {
+            logToInsert = `println!("${text}: {:?}", ${text});`;
+          } else {
+            logToInsert = vscode.workspace.getConfiguration().get("quickLogUtil.rustLogString");
+          }
+        break;
         default:
           return;
       }

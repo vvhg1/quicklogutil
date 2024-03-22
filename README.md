@@ -1,5 +1,5 @@
 # Quick Log Util
-This is an extension for Visual Studio Code that provides a quick and convenient way to insert and delete log statements in your code. The extension supports multiple languages including C#, Python, ShellScript, JavaScript, TypeScript, C++, and C.
+This is an extension for Visual Studio Code that provides a quick and convenient way to insert and delete log statements in your code. The extension supports multiple languages including C#, Python, ShellScript, JavaScript, TypeScript, C++, C, and Rust.
 
 #
 
@@ -47,6 +47,7 @@ The extension provides the following settings:
 - `quickLogUtil.javascriptLogString`: Custom log statement for JavaScript/TypeScript projects
 - `quickLogUtil.cppLogString`: Custom log statement for C++ projects
 - `quickLogUtil.cLogString`: Custom log statement for C projects
+- `quickLogUtil.rustLogString`: Custom log statement for Rust projects
 
 #
 
