@@ -38,6 +38,8 @@ function getAllLogStatements(language, document, documentText) {
       break;
     case "javascript":
     case "typescript":
+    case "javascriptreact":
+    case "typescriptreact":
       logToInsert = vscode.workspace.getConfiguration().get("quickLogUtil.javascriptLogString");
       break;
     case "cpp":
@@ -78,6 +80,8 @@ function getAllLogStatements(language, document, documentText) {
 
       case "javascript":
       case "typescript":
+      case "javascriptreact":
+      case "typescriptreact":
         logRegex = /console.log\((.*)\);?/g;
         break;
       case "cpp":
@@ -185,6 +189,8 @@ function activate(context) {
           break;
         case "javascript":
         case "typescript":
+        case "javascriptreact":
+        case "typescriptreact":
           if (vscode.workspace.getConfiguration().get("quickLogUtil.javascriptLogString") === "") {
             logToInsert = `functions.logger.info(\`${text}: \$\{${text}\}\`, { structuredData: true });`
             // logToInsert = `console.log(\`${text}: \$\{${text}\}\`);`;
